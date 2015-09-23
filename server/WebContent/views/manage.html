@@ -1,0 +1,56 @@
+<div class="container">
+    <h3 style="margin-top: -30px;">Hi Vivek, These are your registered devices. </h3>
+</div>
+
+<div class="container" class="col-md-4">
+<h4 style="padding-bottom: 20px;color: blue;">Thermostat Devices:</h4>
+      <div class="table-responsive">      
+ 	  <table class="table">
+      <thead>
+      <tr>
+        <th>Device Endpoint Name</th>
+        <th>Object Instance ID</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody data-ng-repeat="thermostat in thermostats">
+      <tr>
+        <td>{{thermostat.id}}</td>
+        <td>{{thermostat.objinstanceid}}</td>
+        <td>{{thermostat.Status}}</td>
+        <td></td>
+        <td><a><p style="color: blue;cursor: pointer;" ng-click="manageThermostat(thermostats[$index].id,thermostats[$index].objinstanceid)" ng-controller="ManageController">Manage</p></a></td>
+        <td><a><p style="color: blue;cursor: pointer;" ng-click="deregister(thermostats[$index].id,thermostats[$index].objinstanceid)" ng-controller="ManageController">De-Register</p></a></td>
+      </tr> 
+     </tbody>
+     </table>
+	</div>
+</div>
+
+
+
+<div class="container" class="col-md-4">
+<h4 style="padding-bottom: 20px;color: blue;">Light Switch Devices:</h4>
+      <div class="table-responsive">      
+ 	  <table class="table">
+      <thead>
+      <tr>
+        <th>Device Endpoint Name</th>
+        <th>Object Instance ID</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody data-ng-repeat="lightswitch in lightswitches">
+      <tr>
+        <td>{{lightswitch.id}}</td>
+        <td>{{lightswitch.objinstanceid}}</td>
+        <td>{{lightswitch.Status}}</td>
+        <td></td>
+        <td><a><p style="color: blue;cursor: pointer;" ng-click="manageLightSwitch(lightswitches[$index].id,lightswitches[$index].objinstanceid)" ng-controller="ManageController">Manage</p></a></td>
+        <td><a href="#/deregister"><p style="color: blue;cursor: pointer;" ng-click="deregister(lightswitches[$index].id,lightswitches[$index].objinstanceid)" ng-controller="ManageController">De-Register</p></a></td>
+      </tr> 
+     </tbody>
+     </table>
+	</div>
+</div>
+    
